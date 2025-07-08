@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PostList from "./pages/PostList";
-import PostDetail from "./pages/PostDetail";
-import PostForm from "./pages/PostForm";
+import PostListPage from "./pages/PostListPage";
+import PostDetailPage from "./pages/PostDetailPage";
+import PostFormPage from "./pages/PostFormPage";
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<PostList />} />
-                <Route path="/:id" element={<PostDetail />} />
-                <Route path="/form" element={<PostForm />} />
+                <Route path="/" element={<PostListPage />} />
+                <Route path="/:id" element={<PostDetailPage />} />
+                <Route path="/form" element={<PostFormPage />} />
             </Routes>
         </Router>
     );

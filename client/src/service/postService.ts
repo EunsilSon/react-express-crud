@@ -14,3 +14,8 @@ export const getPost = (id: string) =>
 export const createPost = (post: Omit<Post, "_id">) =>
     axios.post<Post>(BASE_URL, post)
         .then(res => res.data);
+
+export const deletePost = (id: string) => {
+    axios.delete(`${BASE_URL}/${id}`)
+        .then(res => res.data);
+}

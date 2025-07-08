@@ -15,13 +15,12 @@ function PostFormPage() {
 
             try {
                 await createPost(post);
-                alert("완료");
                 navigate("/");
             } catch (error) {
-                alert("실패");
+                console.log(error);
             }
         } else {
-            console.log("<UNK>");
+            console.log("FormRef is not exist");
         }
     };
 

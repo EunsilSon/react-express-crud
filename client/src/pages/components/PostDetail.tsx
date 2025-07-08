@@ -1,10 +1,10 @@
-import { Post } from "../../types/post";
-
-export const PostDetail = ({ post }: { post: Post }) => {
+const PostDetail = ({ title, content }: { title: string, content: string }) => {
     return (
         <div>
-            <h2>{post.title}</h2>
-            <p>{post.content}</p>
+            <h2>{title}</h2>
+            <p>{content}</p>
         </div>
     );
 };
+
+export default PostDetail;

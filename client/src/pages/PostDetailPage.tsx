@@ -1,16 +1,43 @@
 import Button from "../components/Button";
+import PostDetail from "./components/PostDetail";
+import {getPost} from "../service/postService";
+import {useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 function PostDetailPage() {
-    const handleClick = () => {
-        alert("글 삭제됨");
+    const { id } = useParams();
+    const [title, setTitle] = useState("loading...");
+    const [content, setContent] = useState("loading...");
+
+    useEffect(() => {
+        if (!id) {
+            console.log("Not found post id");
+            return;
+        }
+
+        getPost(id)
+            .then((res) => {
+                setTitle(res.title);
+                setContent(res.content);
+            })
+        .catch((err) => {
+            console.error(err);
+            setTitle("no title");
+            setContent("no content");
+            console.log(err.message);
+        })
+    })
+
+    const handleClick = async () => {
+        alert("삭제");
     };
 
     return (
         <div>
             <h1>게시글 상세 조회</h1>
+            <PostDetail title={title} content={content} />
             <Button text="삭제" onClick={handleClick} />
         </div>
     );
 }
-
 export default PostDetailPage;

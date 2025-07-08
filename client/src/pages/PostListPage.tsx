@@ -9,7 +9,6 @@ function PostListPage() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        alert("글 생성 페이지로 이동");
         navigate(`/form`);
     };
 

@@ -4,7 +4,6 @@ const PostItem = ({ id, title, content }: { id: string, title: string, content: 
     const navigate = useNavigate();
 
     const handleClick = () => {
-        alert(id);
         navigate(`/${id}`);
     }
 

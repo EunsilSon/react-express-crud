@@ -11,6 +11,6 @@ export const getPost = (id: string) =>
     axios.get<Post>(`${BASE_URL}/${id}`)
         .then(res => res.data);
 
-export const createPost = (post: Post) =>
+export const createPost = (post: Omit<Post, "_id">) =>
     axios.post<Post>(BASE_URL, post)
         .then(res => res.data);

@@ -5,7 +5,7 @@ import { connectDB } from "./db/db.js";
 
 const debug = debugLib('server:server');
 
-const port = process.env.PORT || '3000';
+const port = process.env.PORT || '4000';
 app.set('port', port);
 
 const server = http.createServer(app);
